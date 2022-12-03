@@ -61,6 +61,11 @@
       zoomControl: false,
       tap: false
     });
+     // load GeoJSON from an external file
+  fetch("MinneapolisBorder.geojson").then(res => res.json()).then(data => {
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(map);
+  });
   </script>
 
   <script type="text/javascript" src="google-doc-url.js"></script>
